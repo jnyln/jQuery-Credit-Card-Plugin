@@ -779,3 +779,19 @@ $.fn.setSelection = function(o, p)
 		return _initialize();
 	};
 })(jQuery);
+
+$(document).ready(function() {
+	$('#creditcardform').paymentForm();
+	$("#creditcardform").find('input').each(function(index) {
+ 		if ($(this).val() != '') {
+ 			$(this).next('span').css({"display":"none"});
+ 		}
+	});
+	$("#creditcardform").find('input').change(function() {
+		if ($(this).val() != '') {
+ 			$(this).next('span').css({"display":"none"});
+ 		} else {
+ 			$(this).next('span').css({"display":"inline"});
+ 		}
+	});
+});
